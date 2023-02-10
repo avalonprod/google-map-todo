@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+.add__item .list{
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid gret;
+    display: flex;
+    gap: 5px;
+}
+
+ul li {
+    list-style:none;
+    display: flex;
+    gap: 5px;
+}
+.data__sublist{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+
+.list .item input, .data__sublist input{
+    border: 1px solid rgb(209, 209, 209);
+    height: 30px;
+    width: 240px;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+.add__item-button{
+    width: 90px;
+    height: 30px;
+    background-color: transparent;
+    color: darkgreen;
+    font-weight: 700;
+    font-size: 15px;
+    border: 1px solid darkgreen;
+    transition: all .2s;
+    cursor: pointer;
+}
+.add__item-button:hover{
+    background-color: rgba(0, 128, 0, 0.356);
+}
+
+.buttons__block{
+    display: block;
+}
+
+.add__list-links{
+    width: 40px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}

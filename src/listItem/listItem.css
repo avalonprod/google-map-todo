@@ -1,0 +1,87 @@
+
+.list__item .list{
+    display: flex;
+    gap: 5px;
+}
+
+.list__item-btn{
+    width: 90px;
+    height: 30px;
+    background: transparent;
+
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+
+.data__list{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc((240 * 2) + 5);
+    gap: 5px;
+}
+
+
+.hide__links{
+    display: block;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide__links.true{
+    background: red;
+}
+
+
+.data__list{
+    grid-column: 4/5;
+    grid-row: 1 / 10;
+}
+
+.edit{
+    border: 1px solid blue;
+    color: darkblue;
+}
+.edit:hover{
+    background: rgba(0, 0, 255, 0.356);
+}
+
+.delete{
+    border: 1px solid darkred;
+    color: darkred;
+}
+.delete:hover{
+    background: rgba(139, 0, 0, 0.356);
+}
+
+
+.save{
+    border: 1px solid green;
+    color: darkgreen;
+}
+.save:hover{
+    background: rgba(0, 128, 0, 0.356);
+}
+
+li{
+    position: relative;
+}
+
+
+li label{
+    position: absolute;
+    font-size: 9px;
+    top: -5px;
+    left: 10px;
+    background: #fff;
+}
+
+
+li input{
+    background: #fff;
+}
