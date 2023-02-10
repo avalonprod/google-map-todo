@@ -4,6 +4,7 @@ import { CgMathPlus } from 'react-icons/cg'
 
 
 import DataList from './DataList/DataList'
+import InputItem from './item/InpuItem'
 import './listItem.css'
 
 
@@ -124,106 +125,99 @@ class ListItem extends Component{
 
 
         return(
-            <div className="list__item">
-                <ul className="list" >
-                    <li className="item">
-                        <label htmlFor="href">Href</label>
-                        <input type="text" 
-                            id='href'
-                            value={href}
-                            disabled={disabled}
-                            name='href'
-                            onChange={this.onChangeValue}
-                        />
-                    </li>
-                    <li className="item">
-                        <label htmlFor="url-marker">Url img marker</label>
-                        <input type="text" 
-                            id='url-marker'
-                            value={urlMarker}
-                            disabled={disabled}
-                            name='urlMarker'
-                            onChange={this.onChangeValue}
-                        />
-                    </li>
-                    <li className="item">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" 
-                            id='title'
-                            value={title}
-                            disabled={disabled}
-                            name='title'
-                            onChange={this.onChangeValue}
-                        />
-                    </li>
-                    <li className="item">
-                        <label htmlFor="text">Text</label>
-                        <input type="text" 
-                            id='text'
-                            value={text}
-                            disabled={disabled}
-                            name='text'
-                            onChange={this.onChangeValue}
-                        />
-                    </li>
-                    <li className="item">
-                        <label htmlFor="url-img">Url img</label>
-                        <input type="text" 
-                            id='url-img'
-                            value={urlImg}
-                            disabled={disabled}
-                            name='urlImg'
-                            onChange={this.onChangeValue}
-                        />
-                    </li>
-                    <li className="item">
-                        <label htmlFor="lat">Lat</label>
-                        <input type="number"
-                            id='lat'
-                            disabled={disabled}
-                            name='lat'
-                            onChange={this.onChangeValue}
-                            value={lat}
-                        />
-                    </li>
-                    <li className="item">
-                        <label htmlFor="lng">Lng</label>
-                        <input type="number" 
-                            id='lng'
-                            value={lng}
-                            disabled={disabled}
-                            name='lng'
-                            onChange={this.onChangeValue}
-                        />
-                    </li>
-                    <ul className="data__list">
-                        {elem}
-                    </ul>
-                    <li className='item'>
-
-                        <button className="add__list-links" style={styles} onClick={this.onAddLinks}><CgMathPlus/></button>
-                        <button className='edit list__item-btn'
-                            data-toggle='disabled'
-                            style={{display: editDisplay}}
-                            onClick={onToggleProp}
-                        >Edit</button>
-                        <button className='save list__item-btn'
-                            data-toggle='disabled'
-                            style={{display: saveDisplay}}
-                            onClick={this.onChangeData}
-                        >Save</button>
-                        <button className="delete list__item-btn"
-                            onClick={deleteItem}
-                        >
-                            Delete
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        )
-    }
+          <li className="list__item">
+        <ul className="list">
+          <InputItem
+            label="Href"
+            id="href"
+            disabled={disabled}
+            name="href"
+            onChangeValue={this.onChangeValue}
+            valueProp={href}
+          />
+          <InputItem
+            label="Url img marker"
+            id="url-marker"
+            disabled={disabled}
+            name="urlMarker"
+            onChangeValue={this.onChangeValue}
+            valueProp={urlMarker}
+          />
+          <InputItem
+            label="Title"
+            id="title"
+            disabled={disabled}
+            name="title"
+            onChangeValue={this.onChangeValue}
+            valueProp={title}
+          />
+          <InputItem
+            label="Text"
+            id="text"
+            disabled={disabled}
+            name="text"
+            onChangeValue={this.onChangeValue}
+            valueProp={text}
+          />
+          <InputItem
+            label="Url img"
+            id="url-img"
+            disabled={disabled}
+            name="urlImg"
+            onChangeValue={this.onChangeValue}
+            valueProp={urlImg}
+          />
+          <InputItem
+            label="Lat"
+            id="lat"
+            disabled={disabled}
+            name="lat"
+            onChangeValue={this.onChangeValue}
+            valueProp={lat}
+            type="number"
+          />
+          <InputItem
+            label="Lng"
+            id="lng"
+            disabled={disabled}
+            name="lng"
+            onChangeValue={this.onChangeValue}
+            valueProp={lng}
+            type="number"
+          />
+          <ul className="data__list">{elem}</ul>
+          <li className="item item__buttons">
+            <button
+              className="add__list-links"
+              style={styles}
+              onClick={this.onAddLinks}
+            >
+              <CgMathPlus />
+            </button>
+            <button
+              className="edit list__item-btn"
+              data-toggle="disabled"
+              style={{ display: editDisplay }}
+              onClick={onToggleProp}
+            >
+              Edit
+            </button>
+            <button
+              className="save list__item-btn"
+              data-toggle="disabled"
+              style={{ display: saveDisplay }}
+              onClick={this.onChangeData}
+            >
+              Save
+            </button>
+            <button className="delete list__item-btn" onClick={deleteItem}>
+              Delete
+            </button>
+          </li>
+        </ul>
+      </li>
+    );
+  }
 }
-
-
 
 export default ListItem;

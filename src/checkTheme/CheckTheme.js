@@ -2,16 +2,17 @@
 import { useState } from 'react';
 import './checkTheme.css';
 
-const CheckTheme = () =>{
-    let [active, setActive] = useState(false)
+const CheckTheme = ({getTheme}) =>{
+    let [blackTheme, setBlackTheme] = useState(false)
 
     let classe = ''
-    if(active){
-        classe = ' active'
+    if(blackTheme){
+        classe = ' black__theme'
     }
 
+
     return(
-        <button className={"check__theme"+classe} onClick={()=> setActive(!active)}>
+        <button className={"check__theme"+classe} onClick={()=> {setBlackTheme(!blackTheme); getTheme(blackTheme)}}>
             <span className="off">off</span>
             <span className="circle"></span>
             <span className="on">on</span>

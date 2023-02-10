@@ -1,8 +1,11 @@
 
 
-.item__delete{
-    width: max-content;
-    height: max-content;
+.data__item .item__delete{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: -20px;
+    z-index: 100;
 }
 
 .data__subitem label{
